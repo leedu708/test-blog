@@ -15,10 +15,29 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
 
     $stateProvider
 
-    .state('home', {
-      url: '/home',
+    .state('public', {
+      url: '/public',
       templateUrl: '/templates/home.html',
-      controller: 'HomeCtrl',
+      ncyBreadcrumb: {
+        skip: true
+      }
+    })
+
+    .state('public.home', {
+      url: '^/home',
+      views: {
+        'header': {
+          templateUrl: '/templates/public/layout/header.html'
+        },
+
+        'subheader': {
+          templateUrl: '/templates/public/layout/subheader.html'
+        },
+
+        'main-content': {
+          templateUrl: '/templates/public/layout/mainContent.html'
+        }
+      },
       ncyBreadcrumb: {
         label: 'Home'
       }
