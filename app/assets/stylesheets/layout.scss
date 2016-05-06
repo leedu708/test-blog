@@ -1,3 +1,10 @@
+// open sans
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic);
+
+body {
+  font-family: 'Open Sans' !important;
+}
+
 .blog-section {
   color: #FFF;
 
@@ -12,15 +19,10 @@
 
   .navbar-brand {
     font-size: 38px;
-    padding-left: 0px;
   }
 
   .icon-bar {
     background-color: #FFF;
-  }
-
-  .navbar-collapse {
-    padding-right: 0px;
   }
 
   .nav-pills {
@@ -54,5 +56,18 @@
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+
+    .breadcrumb {
+      background-color: #61C57B;
+      color: #FFF;
+
+      .active {
+        color: #FFF;
+      }
+    }
   }
+}
+
+.main-content {
+  background-color: #262626;
 }
