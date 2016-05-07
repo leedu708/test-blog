@@ -14,9 +14,17 @@
       <nav class='pull-right'>
         <div class='navbar-collapse collapse'>
           <ul class='nav navbar-nav nav-pills'>
-            <li><a ui-sref='public.layout.home'>Blog</a></li>
-            <li><a ui-sref='public.layout.about'>About</a></li>
-            <li><a ui-sref='public.layout.contact'>Contact</a></li>
+            <li ui-sref='home' ui-sref-active='active'>
+              <a>Blog</a>
+            </li>
+
+            <li ui-sref='about' ui-sref-active='active'>
+              <a>About</a>
+            </li>
+
+            <li ui-sref='contact' ui-sref-active='active'>
+              <a>Contact</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -26,15 +34,18 @@
   <div class='container collapse' id='mini-menu'>
     <div class='col-md-12'>
       <ul>
-        <li ui-sref='public.layout.home'>
+        <li ui-sref='home'
+            ui-sref-active='active'>
           Blog
         </li>
 
-        <li ui-sref='public.layout.about'>
+        <li ui-sref='about'
+            ui-sref-active='active'>
           About
         </li>
 
-        <li ui-sref='public.layout.contact'>
+        <li ui-sref='contact'
+            ui-sref-active='active'>
           Contact
         </li>
       </ul>

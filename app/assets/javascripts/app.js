@@ -17,10 +17,7 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
 
     .state('public', {
       url: '/public',
-      templateUrl: '/templates/public/layout.html',
-      ncyBreadcrumb: {
-        skip: true
-      }
+      templateUrl: '/templates/public/layout.html'
     })
 
     .state('public.layout', {
@@ -37,13 +34,12 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
         'main-content': {
           templateUrl: '/templates/public/layout/mainContent.html'
         }
-      },
-      ncyBreadcrumb: {
-        skip: true
       }
     })
 
-    .state('public.layout.home', {
+    // nav routes
+    .state('home', {
+      parent: 'public.layout',
       url: '^/home',
       templateUrl: '/templates/public/home.html',
       controller: 'HomeCtrl',
@@ -51,25 +47,31 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
         posts: ['Restangular', function(Restangular) {
           return Restangular.all('posts').getList();
         }]
-      },
-      ncyBreadcrumb: {
-        label: 'Home'
       }
     })
 
-    .state('public.layout.about', {
+    .state('about', {
+      parent: 'public.layout',
       url: '^/about',
-      templateUrl: '/templates/public/nav/about.html',
-      ncyBreadcrumb: {
-        label: 'About'
-      }
+      templateUrl: '/templates/public/nav/about.html'
     })
 
-    .state('public.layout.contact', {
+    .state('contact', {
+      parent: 'public.layout',
       url: '^/contact',
-      templateUrl: '/templates/public/nav/contact.html',
-      ncyBreadcrumb: {
-        label: 'Contact Me'
+      templateUrl: '/templates/public/nav/contact.html'
+    })
+
+    // show post
+    .state('showPost', {
+      parent: 'public.layout',
+      url: '^/posts/:post_id',
+      templateUrl: '/templates/public/posts/show.html',
+      controller: 'showPostCtrl',
+      resolve: {
+        post: ['Restangular', '$stateParams', function(Restangular, $stateParams) {
+          return Restangular.one('posts', $stateParams['post_id']).get();
+        }]
       }
     })
 
