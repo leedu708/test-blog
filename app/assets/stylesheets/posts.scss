@@ -1,3 +1,27 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-post-wrapper {
+  background-color: #5B5B5B;
+  margin-bottom: 40px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.67);
+          box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.67);
+
+  .header {
+    padding: 20px 40px 0 40px;
+  }
+
+  .body {
+    padding: 0 40px;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    float: right;
+    margin-right: 40px;
+    margin-bottom: 20px;
+  }
+}

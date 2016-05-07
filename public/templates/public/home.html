@@ -1,0 +1,18 @@
+<h1 class='page-header'>Home</h1>
+<div class='row'>
+  <div class='col-md-8'>
+    <div ng-repeat='post in posts' class='row' ng-if='$index % 2 == 0'>
+      <div class='col-md-6 col-sm-6'>
+        <home-post post='posts[$index]'></home-post>
+      </div>
+
+      <div class='col-md-6 col-sm-6'>
+        <home-post post='posts[$index + 1]' ng-if='posts.length > ($index + 1)'></home-post>
+      </div>
+    </div>
+  </div>
+
+  <div class='col-md-4'>
+    SIDEBAR
+  </div>
+</div>

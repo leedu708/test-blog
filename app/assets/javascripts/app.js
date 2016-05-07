@@ -17,14 +17,14 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
 
     .state('public', {
       url: '/public',
-      templateUrl: '/templates/home.html',
+      templateUrl: '/templates/public/layout.html',
       ncyBreadcrumb: {
         skip: true
       }
     })
 
-    .state('public.home', {
-      url: '^/home',
+    .state('public.layout', {
+      url: '/layout',
       views: {
         'header': {
           templateUrl: '/templates/public/layout/header.html'
@@ -39,7 +39,37 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
         }
       },
       ncyBreadcrumb: {
+        skip: true
+      }
+    })
+
+    .state('public.layout.home', {
+      url: '^/home',
+      templateUrl: '/templates/public/home.html',
+      controller: 'HomeCtrl',
+      resolve: {
+        posts: ['Restangular', function(Restangular) {
+          return Restangular.all('posts').getList();
+        }]
+      },
+      ncyBreadcrumb: {
         label: 'Home'
+      }
+    })
+
+    .state('public.layout.about', {
+      url: '^/about',
+      templateUrl: '/templates/public/nav/about.html',
+      ncyBreadcrumb: {
+        label: 'About'
+      }
+    })
+
+    .state('public.layout.contact', {
+      url: '^/contact',
+      templateUrl: '/templates/public/nav/contact.html',
+      ncyBreadcrumb: {
+        label: 'Contact Me'
       }
     })
 

@@ -3,6 +3,14 @@
 
 body {
   font-family: 'Open Sans' !important;
+
+  .blog-btn {
+    color: #FFF;
+    background-color: #5BC276;
+    background-image: linear-gradient(to bottom, #5BC276 0%, #3DA358 100%);
+    background-repeat: repeat-x;
+    border-color: #3A9C54;
+  }
 }
 
 .blog-section {
@@ -10,34 +18,68 @@ body {
 
   a, a:hover {
     color: #FFF;
+    cursor: pointer;
   }
 }
 
-.nav-container {
-  background-color: #3AB159;
-  padding: 50px 0;
+header {
+  #mini-menu {
+    background-color: #3AB159;
 
-  .navbar-brand {
-    font-size: 38px;
-  }
+    ul {
+      list-style: none;
+      background-color: #61C57B;
+      margin-bottom: 50px;
+      border-radius: 10px;
+      padding-right: 40px;
 
-  .icon-bar {
-    background-color: #FFF;
-  }
+      li {
+        font-size: 24px;
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 10px;
+        cursor: pointer;
 
-  .nav-pills {
-    .active {
-      a {
-        background-color: #61C57B;
+        a:focus {
+          text-decoration: none;
+          color: #FFF;
+        }
+      }
+
+      li:hover {
+        text-decoration: underline;
       }
     }
+  }
 
-    a {
-      font-size: 18px;
+  .nav-container {
+    background-color: #3AB159;
+    padding: 50px 0;
+
+    .navbar-brand {
+      font-size: 38px;
     }
 
-    a:hover {
-      background-color: #61C57B;
+    .icon-bar {
+      background-color: #FFF;
+    }
+
+    .nav-pills {
+      .active {
+        a {
+          background-color: #61C57B;
+        }
+      }
+
+      a, a:focus {
+        font-size: 18px;
+        background-color: #3AB159;
+        color: #FFF;
+      }
+
+      a:hover {
+        background-color: #61C57B;
+      }
     }
   }
 }

@@ -1,9 +1,9 @@
 blog.controller('HomeCtrl',
-  ['$scope',
-  function($scope) {
+  ['$scope', 'posts',
+  function($scope, posts) {
 
     $scope.init = function() {
-      $scope.test = 'Hello, World!';
+      $scope.posts = posts;
     };
 
     $scope.init();
