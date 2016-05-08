@@ -15,6 +15,7 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
 
     $stateProvider
 
+    // public routes
     .state('public', {
       url: '/public',
       templateUrl: '/templates/public/layout.html'
@@ -72,6 +73,29 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
         post: ['Restangular', '$stateParams', function(Restangular, $stateParams) {
           return Restangular.one('posts', $stateParams['post_id']).get();
         }]
+      }
+    })
+
+    // admin routes
+    .state('admin', {
+      url: '/admin',
+      templateUrl: '/admin/layout.html'
+    })
+
+    .state('admin.dashboard', {
+      url: '/dashboard',
+      views: {
+        'admin-header': {
+          templateUrl: '/admin/dashboard/adminHeader.html'
+        },
+
+        'sidebar': {
+          templateUrl: '/admin/dashboard/sidebar.html'
+        },
+
+        'admin-content': {
+          templateUrl: '/admin/dashboard/adminContent.html'
+        }
       }
     })
 
