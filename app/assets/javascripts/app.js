@@ -79,24 +79,39 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
     // admin routes
     .state('admin', {
       url: '/admin',
-      templateUrl: '/admin/layout.html'
+      templateUrl: '/templates/admin/layout.html'
     })
 
     .state('admin.dashboard', {
       url: '/dashboard',
       views: {
         'admin-header': {
-          templateUrl: '/admin/dashboard/adminHeader.html'
+          templateUrl: '/templates/admin/dashboard/adminHeader.html'
         },
 
         'sidebar': {
-          templateUrl: '/admin/dashboard/sidebar.html'
+          templateUrl: '/templates/admin/dashboard/sidebar.html'
         },
 
         'admin-content': {
-          templateUrl: '/admin/dashboard/adminContent.html'
+          templateUrl: '/templates/admin/dashboard/adminContent.html'
         }
       }
+    })
+
+    .state('admin.dashboard.overview', {
+      url: '/overview',
+      templateUrl: '/templates/admin/content/overview.html'
+    })
+
+    .state('admin.dashboard.posts', {
+      url: '/posts',
+      templateUrl: '/templates/admin/content/posts.html'
+    })
+
+    .state('admin.dashboard.tags', {
+      url: '/tags',
+      templateUrl: '/templates/admin/content/tags.html'
     })
 
   }])
