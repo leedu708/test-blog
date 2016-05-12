@@ -34,6 +34,10 @@ var blog = angular.module('blog', ['ui.router', 'restangular', 'ngAnimate', 'Dev
 
         'main-content': {
           templateUrl: '/templates/public/layout/mainContent.html'
+        },
+
+        'footer': {
+          templateUrl: '/templates/public/layout/footer.html'
         }
       }
     })

@@ -19,6 +19,7 @@ body {
   a, a:hover {
     color: #FFF;
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
@@ -113,6 +114,12 @@ header {
 }
 
 .main-content {
-  padding-top: 50px;
+  padding: 50px 0;
   background-color: #262626;
+}
+
+footer {
+  padding: 50px 0;
+  font-size: 16px;
+  background-color: #313131;
 }
